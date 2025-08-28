@@ -1,0 +1,9 @@
+version: "3"
+services:
+  apache:
+    build: ./apache
+    container_name: apache_mislead
+    ports:
+      - "8082:80"
+    volumes:
+      - ./php:/var/www/html

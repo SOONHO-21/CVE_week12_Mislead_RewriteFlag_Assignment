@@ -1,0 +1,40 @@
+블로그 자료 주소
+https://blog.orange.tw/posts/2024-08-confusion-attacks-en/
+https://i.blackhat.com/BH-US-24/Presentations/US24-Orange-Confusion-Attacks-Exploiting-Hidden-Semantic-Thursday.pdf
+
+
+디렉토리 구조
+week12_Mislead_RewriteFlag_Assignment/
+ ├─ docker-compose.yml
+ ├─ apache/
+ │   ├─ Dockerfile
+ │   ├─ vulnerable.conf
+ └─ php/
+     ├─ uploads/
+     └─ upload.php
+
+
+VSCode로 C:\Windows\System32\drivers\etc\hosts 열기
+파일 열기 -> 파일 형식 모든 파일(*.*) 로 바꾸고 hosts 선택
+
+맨 아래 줄에 추가 :
+127.0.0.1   www.local
+127.0.0.1   static.local
+
+
+빠르게 껏다 켜기
+docker-compose down -v
+docker-compose up --build
+
+캐시 초기화
+docker-compose build --no-cache && docker-compose up -d
+혹은
+docker-compose build --no-cache
+docker-compose up -d
+
+도커 CLI 환경 접속하기
+C:\HackingStudy\week12_Mislead_RewriteFlag_Assignment>docker exec -it apache_mislead bash
+root@a5b1f8279466:/var/www/html# apache2ctl -M | grep php
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.2. Set the 'ServerName' directive globally to suppress this message
+ php_module (shared)
+
