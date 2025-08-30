@@ -37,4 +37,3 @@ C:\HackingStudy\week12_Mislead_RewriteFlag_Assignment>docker exec -it apache_mis
 root@a5b1f8279466:/var/www/html# apache2ctl -M | grep php
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.2. Set the 'ServerName' directive globally to suppress this message
  php_module (shared)
-
